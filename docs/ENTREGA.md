@@ -20,4 +20,4 @@ Mostre brevemente os componentes e as conexões, o código e o prefixo MQTT. Ini
 
 Antes da submissão, abra os links de repositório, vídeo e simulação em sessão sem login ou confirme o acesso exigido pelo professor. A existência dos arquivos não garante acesso externo se o repositório estiver privado.
 
-As orientações completas de todas as avaliações não estavam disponíveis nesta sessão; este roteiro usa os requisitos compartilhados e o artigo atual. Não presume exigências adicionais nem declara aprovação integral da entrega final.
+Os critérios do projeto final fornecidos pelo professor foram conferidos em 03/11/2026. O item 2.1 destina até 2,0 pontos à documentação do repositório; o vídeo vale até 3,0 pontos. A correspondência de cada requisito está em [CRITERIOS_AVALIACAO.md](CRITERIOS_AVALIACAO.md). A ausência de vídeo, repositório ou ambos resulta em nota zero segundo a rubrica, e o descumprimento de internet/MQTT limita a nota a um quarto do total. A comprovação da execução e a inserção dos links reais no artigo continuam necessárias.

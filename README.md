@@ -26,7 +26,7 @@ O código, os arquivos de montagem e os procedimentos de reprodução estão inc
 | `dados/` | Entradas sintéticas, exemplo de payload, dicionário e destino das coletas. |
 | `scripts/` | Coleta MQTT, exportação CSV, geração do fluxo e validação estrutural. |
 | `tests/` | Testes da lógica C++, processamento do painel e exportação. |
-| `docs/` | Montagem física, comunicação, reprodução, testes e orientação de entrega. |
+| `docs/` | Montagem física, comunicação, reprodução, testes, [documentação do código](docs/CODIGO.md) e [correspondência com a avaliação](docs/CRITERIOS_AVALIACAO.md). |
 | `.github/workflows/validate.yml` | Automação de testes e compilação ESP32 após publicação no GitHub. |
 
 ## Executar a demonstração
@@ -93,6 +93,8 @@ pio run -e esp32dev -e prolongado
 No Windows, execute `test-monitor.exe` no lugar de `./test-monitor`. Após alterar `process-message.js`, `dashboard.vue` ou o diagrama interno, rode `node scripts/build-flow.cjs` e verifique novamente. A compilação e os testes nativos não comprovam comunicação MQTT ou funcionamento no Wokwi; a validação integrada está em [PLANO_TESTES.md](docs/PLANO_TESTES.md).
 
 ## Relação com a entrega
+
+A correspondência dos itens do repositório exigidos no item 2.1 da rubrica está em [CRITERIOS_AVALIACAO.md](docs/CRITERIOS_AVALIACAO.md). As responsabilidades das funções, a arquitetura e os estados estão em [CODIGO.md](docs/CODIGO.md).
 
 Este repositório reúne fonte e dados de entrada necessários à reprodução. O [roteiro de entrega](docs/ENTREGA.md) identifica as evidências que precisam acompanhar artigo, vídeo e dados efetivamente coletados. O artigo existente ainda descreve implementação e ensaios como previstos; sua redação só deve ser atualizada para resultados após execução comprovada.
 
