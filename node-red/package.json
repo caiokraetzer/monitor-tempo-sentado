@@ -1,0 +1,9 @@
+{
+  "name":"monitor-tempo-sentado-dashboard",
+  "version":"1.0.0",
+  "private":true,
+  "description":"Painel MQTT do projeto de Objetos Inteligentes Conectados",
+  "scripts":{"start":"node-red --userDir . flows.json"},
+  "engines":{"node":">=20"},
+  "dependencies":{"node-red":"^4.0.9","@flowfuse/node-red-dashboard":"^1.20.0"}
+}

@@ -1,0 +1,2 @@
+HX711@0.7.5
+PubSubClient@2.8

@@ -1,0 +1,243 @@
+[
+  {
+    "id": "chair-flow",
+    "type": "tab",
+    "label": "Monitor tempo sentado",
+    "disabled": false,
+    "info": "MQTT remoto, validação, painel e gravação JSONL."
+  },
+  {
+    "id": "chair-broker",
+    "type": "mqtt-broker",
+    "name": "HiveMQ público",
+    "broker": "broker.hivemq.com",
+    "port": "1883",
+    "clientid": "",
+    "autoConnect": true,
+    "usetls": false,
+    "protocolVersion": "4",
+    "keepalive": "15",
+    "cleansession": true,
+    "autoUnsubscribe": true
+  },
+  {
+    "id": "chair-input",
+    "type": "mqtt in",
+    "z": "chair-flow",
+    "name": "Telemetria, eventos e status",
+    "topic": "mack/ods3/7c92a1/cadeira01/+",
+    "qos": "0",
+    "datatype": "utf8",
+    "broker": "chair-broker",
+    "nl": false,
+    "rap": true,
+    "rh": 0,
+    "x": 190,
+    "y": 100,
+    "wires": [
+      [
+        "chair-process"
+      ]
+    ]
+  },
+  {
+    "id": "chair-tick",
+    "type": "inject",
+    "z": "chair-flow",
+    "name": "Verificar atualização (1 s)",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "payload"
+      }
+    ],
+    "topic": "__tick",
+    "payload": "",
+    "payloadType": "str",
+    "repeat": "1",
+    "once": true,
+    "onceDelay": 0.5,
+    "x": 180,
+    "y": 180,
+    "wires": [
+      [
+        "chair-process"
+      ]
+    ]
+  },
+  {
+    "id": "chair-process",
+    "type": "function",
+    "z": "chair-flow",
+    "name": "Validar e acompanhar",
+    "func": "// Esta função é incorporada ao fluxo por scripts/build-flow.cjs e testada sem Node-RED.\r\nfunction processMessage(msg, context, now = Date.now()) {\r\n  const prefix = 'mack/ods3/7c92a1/cadeira01/';\r\n  let s = context.get('chair') || {telemetry:null, lastReceived:null, status:'desconhecido', events:[], history:[]};\r\n  let record = null;\r\n  if (msg.topic !== '__tick') {\r\n    if (typeof msg.topic !== 'string' || !msg.topic.startsWith(prefix)) return null;\r\n    const kind = msg.topic.slice(prefix.length);\r\n    let p = msg.payload;\r\n    if (kind === 'status') {\r\n      if (p !== 'online' && p !== 'offline') return null;\r\n      s.status = p;\r\n    } else {\r\n      if (typeof p === 'string') { try { p = JSON.parse(p); } catch { return null; } }\r\n      if (!p || typeof p !== 'object' || Array.isArray(p)) return null;\r\n      if (!Number.isFinite(p.tempo_s) || p.tempo_s < 0 ||\r\n          !Number.isInteger(p.uptime_ms) || p.uptime_ms < 0 || p.uptime_ms > 4294967295) return null;\r\n      if (kind === 'telemetria') {\r\n        if (!['livre','ocupado','indisponivel'].includes(p.estado) || typeof p.alerta !== 'boolean') return null;\r\n        if ((p.estado === 'indisponivel' && (p.ocupado !== null || p.alerta || p.tempo_s !== 0)) ||\r\n            (p.estado === 'livre' && (p.ocupado !== false || p.alerta || p.tempo_s !== 0)) ||\r\n            (p.estado === 'ocupado' && p.ocupado !== true)) return null;\r\n        if (s.telemetry && p.uptime_ms < s.telemetry.uptime_ms) s.history = [];\r\n        s.telemetry = p; s.lastReceived = now;\r\n        s.history.push({x:now, y:p.tempo_s}); s.history = s.history.slice(-180);\r\n      } else if (kind === 'evento') {\r\n        if (!['inicio','fim','lembrete'].includes(p.tipo)) return null;\r\n        s.events.push({tipo:p.tipo, tempo_s:p.tempo_s, uptime_ms:p.uptime_ms, recebido_em:new Date(now).toISOString()}); s.events = s.events.slice(-200);\r\n      } else return null;\r\n    }\r\n    record = {payload:JSON.stringify({recebido_em:new Date(now).toISOString(), topic:msg.topic, payload:p})};\r\n  }\r\n  context.set('chair', s);\r\n  return [{payload:{...s, stale:s.lastReceived === null || now-s.lastReceived>15000, now}}, record];\r\n}\r\n\n\nreturn processMessage(msg, context);",
+    "outputs": 2,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 450,
+    "y": 100,
+    "wires": [
+      [
+        "chair-dashboard"
+      ],
+      [
+        "chair-file"
+      ]
+    ]
+  },
+  {
+    "id": "chair-file",
+    "type": "file",
+    "z": "chair-flow",
+    "name": "Mensagens recebidas (JSONL)",
+    "filename": "data/mqtt.jsonl",
+    "filenameType": "str",
+    "appendNewline": true,
+    "createDir": true,
+    "overwriteFile": "false",
+    "encoding": "utf8",
+    "x": 750,
+    "y": 180,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "chair-base",
+    "type": "ui-base",
+    "name": "Monitor IoT",
+    "path": "/dashboard",
+    "includeClientData": true,
+    "acceptsClientConfig": [
+      "ui-notification",
+      "ui-control"
+    ],
+    "showPathInSidebar": false,
+    "navigationStyle": "default",
+    "titleBarStyle": "default",
+    "showReconnectNotification": true,
+    "notificationDisplayTime": 5,
+    "showDisconnectNotification": true,
+    "allowInstall": false
+  },
+  {
+    "id": "chair-theme",
+    "type": "ui-theme",
+    "name": "Monitor",
+    "colors": {
+      "surface": "#ffffff",
+      "primary": "#087f8c",
+      "bgPage": "#edf3f6",
+      "groupBg": "#ffffff",
+      "groupOutline": "#d5e0e5"
+    },
+    "sizes": {
+      "density": "default",
+      "pagePadding": "12px",
+      "groupGap": "12px",
+      "groupBorderRadius": "8px",
+      "widgetGap": "12px"
+    }
+  },
+  {
+    "id": "chair-page",
+    "type": "ui-page",
+    "name": "Tempo sentado",
+    "ui": "chair-base",
+    "path": "/cadeira",
+    "icon": "chair",
+    "layout": "grid",
+    "theme": "chair-theme",
+    "breakpoints": [
+      {
+        "name": "Default",
+        "px": "0",
+        "cols": "3"
+      },
+      {
+        "name": "Tablet",
+        "px": "576",
+        "cols": "6"
+      },
+      {
+        "name": "Desktop",
+        "px": "1024",
+        "cols": "12"
+      }
+    ],
+    "order": 1,
+    "className": "",
+    "visible": true,
+    "disabled": false
+  },
+  {
+    "id": "chair-group",
+    "type": "ui-group",
+    "name": "Monitoramento",
+    "page": "chair-page",
+    "width": "12",
+    "height": "1",
+    "order": 1,
+    "showTitle": false,
+    "className": "",
+    "visible": "true",
+    "disabled": "false",
+    "groupType": "default"
+  },
+  {
+    "id": "chair-dashboard",
+    "type": "ui-template",
+    "z": "chair-flow",
+    "group": "chair-group",
+    "name": "Assento e eventos",
+    "order": 1,
+    "width": "12",
+    "height": "0",
+    "format": "<template>\n  <section class=\"chair-panel\">\n    <h2>Monitor de tempo sentado</h2>\n    <p>ESP32 · HX711 · MQTT — demonstração acadêmica</p>\n    <div class=\"chair-status\" :class=\"{bad: !msg?.payload || msg.payload.stale || msg.payload.status === 'offline'}\">\n      {{ !msg?.payload || msg.payload.stale ? 'Dados desatualizados — aguardando telemetria' : msg.payload.status === 'offline' ? 'Dispositivo offline' : 'Recebendo dados' }}\n    </div>\n    <div class=\"chair-stats\">\n      <article><small>Estado do assento</small><strong>{{ msg?.payload?.telemetry?.estado || 'Aguardando' }}</strong></article>\n      <article><small>Tempo do ciclo</small><strong>{{ msg?.payload?.telemetry?.tempo_s?.toFixed(1) ?? '—' }} s</strong></article>\n      <article><small>Lembrete de pausa</small><strong>{{ msg?.payload?.telemetry?.alerta ? 'Ativo' : 'Inativo' }}</strong></article>\n    </div>\n    <p>Última telemetria recebida: {{ msg?.payload?.lastReceived ? new Date(msg.payload.lastReceived).toLocaleString('pt-BR') : '—' }} · Status MQTT: {{ msg?.payload?.status || 'desconhecido' }}</p>\n    <h3>Duração do ciclo nas últimas amostras</h3>\n    <svg viewBox=\"0 0 600 160\" role=\"img\" aria-label=\"Histórico do tempo sentado em segundos\">\n      <line x1=\"35\" y1=\"140\" x2=\"590\" y2=\"140\" stroke=\"#64748b\"/>\n      <line x1=\"35\" y1=\"10\" x2=\"35\" y2=\"140\" stroke=\"#64748b\"/>\n      <text x=\"0\" y=\"14\" font-size=\"11\">{{ maxY.toFixed(0) }} s</text><text x=\"15\" y=\"142\" font-size=\"11\">0</text>\n      <polyline :points=\"points\" fill=\"none\" stroke=\"#087f8c\" stroke-width=\"3\"/>\n      <text x=\"35\" y=\"157\" font-size=\"10\">{{ firstTime }}</text><text x=\"500\" y=\"157\" font-size=\"10\">{{ lastTime }}</text>\n    </svg>\n    <h3>Eventos recebidos</h3>\n    <button @click=\"downloadCsv\">Exportar eventos para CSV</button>\n    <table><thead><tr><th>Recebimento</th><th>Evento</th><th>Tempo (s)</th><th>Uptime (ms)</th></tr></thead>\n      <tbody><tr v-for=\"(e,i) in rows\" :key=\"i\"><td>{{e.recebido_em}}</td><td>{{e.tipo}}</td><td>{{e.tempo_s}}</td><td>{{e.uptime_ms}}</td></tr></tbody>\n    </table>\n    <p>O painel mantém até 200 eventos e 180 amostras. O arquivo JSONL do Node-RED preserva as mensagens válidas recebidas. Dados simulados não demonstram benefícios clínicos.</p>\n  </section>\n</template>\n<script>\nexport default {\n  computed: {\n    rows() { return [...(this.msg?.payload?.events || [])].reverse(); },\n    history() { return this.msg?.payload?.history || []; },\n    maxY() { return Math.max(1,...this.history.map(p=>p.y)); },\n    points() { const h=this.history; const min=h[0]?.x||0; const span=Math.max(1,(h[h.length-1]?.x||0)-min); return h.map(p=>`${35+555*(p.x-min)/span},${140-125*p.y/this.maxY}`).join(' '); },\n    firstTime() { return this.history.length ? new Date(this.history[0].x).toLocaleTimeString('pt-BR') : ''; },\n    lastTime() { return this.history.length ? new Date(this.history[this.history.length-1].x).toLocaleTimeString('pt-BR') : ''; }\n  },\n  methods: {\n    downloadCsv() {\n      const rows=this.msg?.payload?.events||[];\n      const csv='recebido_em,tipo,tempo_s,uptime_ms\\n'+rows.map(e=>[e.recebido_em,e.tipo,e.tempo_s,e.uptime_ms].join(',')).join('\\n');\n      const url=URL.createObjectURL(new Blob(['\\uFEFF'+csv],{type:'text/csv;charset=utf-8'}));\n      const a=document.createElement('a'); a.href=url; a.download='eventos-mqtt.csv'; a.click(); URL.revokeObjectURL(url);\n    }\n  }\n}\n</script>\n<style>\n.chair-panel{font-family:system-ui;color:#172b3a;padding:16px}.chair-panel h2{margin-bottom:0}.chair-status{padding:12px;background:#d8f3e6;border-radius:8px}.chair-status.bad{background:#fff0cd}.chair-stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.chair-stats article{flex:1;min-width:145px;padding:16px;background:#eef5f7;border-radius:8px}.chair-stats small,.chair-stats strong{display:block}.chair-stats strong{font-size:22px;margin-top:8px}.chair-panel table{border-collapse:collapse;width:100%;font-size:12px}.chair-panel td,.chair-panel th{padding:7px;text-align:left;border-bottom:1px solid #ddd}.chair-panel button{background:#087f8c;color:white;border:0;border-radius:6px;padding:10px 16px;margin-bottom:12px;cursor:pointer}.chair-panel svg{width:100%;max-height:220px}\n</style>\n",
+    "storeOutMessages": true,
+    "passthru": false,
+    "resendOnRefresh": true,
+    "templateScope": "local",
+    "className": "",
+    "x": 760,
+    "y": 80,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "chair-catch",
+    "type": "catch",
+    "z": "chair-flow",
+    "name": "Erros de processamento/gravação",
+    "scope": null,
+    "uncaught": false,
+    "x": 220,
+    "y": 270,
+    "wires": [
+      [
+        "chair-debug"
+      ]
+    ]
+  },
+  {
+    "id": "chair-debug",
+    "type": "debug",
+    "z": "chair-flow",
+    "name": "Falhas do fluxo",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "true",
+    "targetType": "full",
+    "x": 490,
+    "y": 270,
+    "wires": []
+  }
+]

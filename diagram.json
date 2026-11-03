@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "author": "Caio Kraetzer e Wallace Santana",
+  "editor": "wokwi",
+  "parts": [
+    {"type":"wokwi-esp32-devkit-v1","id":"esp","top":0,"left":0,"attrs":{}},
+    {"type":"wokwi-hx711","id":"hx","top":-20,"left":250,"attrs":{"type":"50kg"}},
+    {"type":"wokwi-resistor","id":"r1","top":190,"left":170,"attrs":{"value":"100"}},
+    {"type":"wokwi-buzzer","id":"buzzer","top":180,"left":280,"attrs":{"volume":"0.2"}}
+  ],
+  "connections": [
+    ["esp:VIN","hx:VCC","red",[]],
+    ["esp:GND.1","hx:GND","black",[]],
+    ["esp:19","hx:DT","green",[]],
+    ["esp:18","hx:SCK","blue",[]],
+    ["esp:23","r1:1","orange",[]],
+    ["r1:2","buzzer:2","orange",[]],
+    ["buzzer:1","esp:GND.2","black",[]],
+    ["esp:TX0","$serialMonitor:RX","",[]],
+    ["esp:RX0","$serialMonitor:TX","",[]]
+  ]
+}

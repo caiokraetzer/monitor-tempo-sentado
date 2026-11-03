@@ -1,0 +1,8 @@
+inicio_s,fim_s,carga_kg,origem,objetivo
+0,10,0,sintetica_planejada,tara e confirmacao inicial de assento vazio
+10,30,20,sintetica_planejada,confirmar entrada e iniciar ciclo
+30,35,7,sintetica_planejada,verificar histerese
+35,38,0,sintetica_planejada,alivio breve sem encerrar ciclo
+38,140,20,sintetica_planejada,observar primeiro lembrete e repeticao
+140,155,0,sintetica_planejada,confirmar saida e zerar contagem
+155,170,20,sintetica_planejada,confirmar novo ciclo

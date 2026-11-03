@@ -1,0 +1,14 @@
+.pio/
+node_modules/
+node-red/node_modules/
+node-red/.config*
+node-red/flows_cred.json
+node-red/data/
+**/local_config.h
+*.exe
+*.obj
+*.o
+*.elf
+*.bin
+.env
+__pycache__/
