@@ -5,7 +5,7 @@
 1. Crie um projeto **ESP32 Arduino** em [wokwi.com](https://wokwi.com/). O projeto parte da concepção física documentada em [MONTAGEM.md](MONTAGEM.md); esta etapa reproduz sua lógica virtualmente.
 2. Copie o conteúdo de `firmware/ChairMonitor/ChairMonitor.ino` para o arquivo `sketch.ino` do Wokwi.
 3. Adicione os arquivos `config.h` e `Monitor.h` ao projeto, preservando nomes e conteúdo.
-4. Substitua `diagram.json` pelo diagrama do repositório. Adicione `libraries.txt` com `HX711@0.7.5` e `PubSubClient@2.8`, ou use o gerenciador de bibliotecas para instalar essas versões.
+4. Substitua `diagram.json` pelo diagrama do repositório. Adicione `libraries.txt` com `HX711 Arduino Library@0.7.5` e `PubSubClient@2.8`, ou use o gerenciador de bibliotecas para instalar essas versões.
 5. Inicie com o sensor em 0 kg. Aguarde a mensagem de tara concluída e a telemetria com `estado: livre`. Não coloque carga durante a tara.
 6. Clique no sensor HX711 e altere a carga em kg. Use 20 kg para representar ocupação e 0 kg para ausência. Não use o modelo de 5 kg, pois o fator do firmware foi especificado para o modelo de 50 kg.
 7. Abra o monitor serial em 115200 baud. O log apresenta tópico e JSON. Para comprovar comunicação, observe também o recebimento no Node-RED ou coletor, e não apenas o log local.

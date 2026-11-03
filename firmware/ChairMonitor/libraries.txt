@@ -1,2 +1,2 @@
-HX711@0.7.5
+HX711 Arduino Library@0.7.5
 PubSubClient@2.8

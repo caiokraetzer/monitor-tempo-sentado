@@ -126,5 +126,5 @@ void loop() {
   if (event!=Monitor::NONE || wasAvailable!=monitor.available || uint32_t(now-telemetryAt)>=5000) {
     telemetryAt=now; publishState(now);
   }
-  updateSound(now); delay(1);
+  updateSound(now); delay(10);
 }

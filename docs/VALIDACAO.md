@@ -23,3 +23,17 @@ As versões do PlatformIO, plataforma ESP32 e bibliotecas do firmware estão fix
 Os dados de entrada e o JSON ilustrativo são sintéticos e não constituem resultados experimentais. Os testes nativos executam a lógica C++ com entradas controladas, sem placa, sensor, áudio ou broker. A compilação não comprova funcionamento elétrico ou comunicação MQTT.
 
 A execução integrada deve seguir [PLANO_TESTES.md](PLANO_TESTES.md), preservando JSONL/CSV, capturas e identificação da versão. Não há vídeo, ensaio com pessoas ou eficácia clínica demonstrada nesta versão.
+
+## Preparação da execução no Wokwi
+
+Projeto salvo: https://wokwi.com/projects/479686134986460161.
+
+Em 03/11/2026, foi iniciada uma execução exploratória pelo navegador. O monitor serial apresentou a inicialização do ESP32 e o perfil de 60.000 ms; a interface do simulador indicou conexão a Wokwi-GUEST pelo Public IoT Gateway. Isso não constitui comprovação de recebimento MQTT.
+
+A compilação web inicialmente falhou porque `HX711@0.7.5` não identifica a biblioteca correta no catálogo do Wokwi. O arquivo foi corrigido para `HX711 Arduino Library@0.7.5`; o identificador PlatformIO `bogde/HX711@0.7.5` permanece correto. Após essa correção, a simulação iniciou. O laço principal passou a usar espera de 10 ms para reduzir trabalho desnecessário no simulador, mantendo a aquisição prevista em aproximadamente 100 ms.
+
+A execução avançava a cerca de 3% do tempo real na aba em segundo plano. A tentativa de colocar a janela em primeiro plano foi interrompida pelo controle do navegador, que não conseguiu confirmar a URL da janela com segurança. A captura do receptor MQTT não foi iniciada, e nenhum resultado de recepção foi acrescentado como se tivesse sido observado.
+
+O script `scripts/capture_integration.py` e o workflow `capture-mqtt.yml` preparam Node-RED e um segundo assinante MQTT para receber e preservar mensagens reais durante uma próxima execução manual. O script não publica dados sintéticos no broker. Sua preparação não equivale a coleta ou teste integrado aprovado. O workflow pode ser acionado manualmente ou por uma atualização deliberada de `tests/integration/capture-request.txt`.
+
+Os registros JSONL/CSV do dispositivo continuam pendentes; não houve medição de ocupação, lembrete ou saída validada pelo receptor nesta tentativa.

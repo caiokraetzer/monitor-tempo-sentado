@@ -12,6 +12,8 @@ O projeto concebe um dispositivo físico instalado em uma cadeira, com **ESP32, 
 
 ## Estado desta versão
 
+[Projeto salvo no Wokwi](https://wokwi.com/projects/479686134986460161). A inicialização e a conexão à rede virtual foram observadas; a coleta integrada de mensagens MQTT ainda está pendente.
+
 O código, os arquivos de montagem e os procedimentos de reprodução estão incluídos. Consulte [VALIDACAO.md](docs/VALIDACAO.md) para saber exatamente quais verificações foram executadas. **Esta versão não contém resultados de execução do circuito no Wokwi, ensaios físicos ou vídeo gravado.** Os CSVs de entrada e o JSON ilustrativo são identificados como sintéticos. A presença deste repositório não substitui a demonstração com MQTT exigida na entrega final.
 
 ## Conteúdo
