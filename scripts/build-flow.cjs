@@ -1,6 +1,6 @@
 const fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'..');
-const func=fs.readFileSync(path.join(root,'node-red/process-message.js'),'utf8').replace(/if \(typeof module[^\n]+/,'')+'\nreturn processMessage(msg, context);';
+const func=fs.readFileSync(path.join(root,'node-red/process-message.js'),'utf8').replace(/\r\n/g,'\n').replace(/if \(typeof module[^\n]+/,'')+'\nreturn processMessage(msg, context);';
 const flow=[
  {id:'chair-flow',type:'tab',label:'Monitor tempo sentado',disabled:false,info:'MQTT remoto, validação, painel e gravação JSONL.'},
  {id:'chair-broker',type:'mqtt-broker',name:'HiveMQ público',broker:'broker.hivemq.com',port:'1883',clientid:'',autoConnect:true,usetls:false,protocolVersion:'4',keepalive:'15',cleansession:true,autoUnsubscribe:true},
@@ -12,7 +12,7 @@ const flow=[
  {id:'chair-theme',type:'ui-theme',name:'Monitor',colors:{surface:'#ffffff',primary:'#087f8c',bgPage:'#edf3f6',groupBg:'#ffffff',groupOutline:'#d5e0e5'},sizes:{density:'default',pagePadding:'12px',groupGap:'12px',groupBorderRadius:'8px',widgetGap:'12px'}},
  {id:'chair-page',type:'ui-page',name:'Tempo sentado',ui:'chair-base',path:'/cadeira',icon:'chair',layout:'grid',theme:'chair-theme',breakpoints:[{name:'Default',px:'0',cols:'3'},{name:'Tablet',px:'576',cols:'6'},{name:'Desktop',px:'1024',cols:'12'}],order:1,className:'',visible:true,disabled:false},
  {id:'chair-group',type:'ui-group',name:'Monitoramento',page:'chair-page',width:'12',height:'1',order:1,showTitle:false,className:'',visible:'true',disabled:'false',groupType:'default'},
- {id:'chair-dashboard',type:'ui-template',z:'chair-flow',group:'chair-group',name:'Assento e eventos',order:1,width:'12',height:'0',format:fs.readFileSync(path.join(root,'node-red/dashboard.vue'),'utf8'),storeOutMessages:true,passthru:false,resendOnRefresh:true,templateScope:'local',className:'',x:760,y:80,wires:[[]]},
+ {id:'chair-dashboard',type:'ui-template',z:'chair-flow',group:'chair-group',name:'Assento e eventos',order:1,width:'12',height:'0',format:fs.readFileSync(path.join(root,'node-red/dashboard.vue'),'utf8').replace(/\r\n/g,'\n'),storeOutMessages:true,passthru:false,resendOnRefresh:true,templateScope:'local',className:'',x:760,y:80,wires:[[]]},
  {id:'chair-catch',type:'catch',z:'chair-flow',name:'Erros de processamento/gravação',scope:null,uncaught:false,x:220,y:270,wires:[['chair-debug']]},
  {id:'chair-debug',type:'debug',z:'chair-flow',name:'Falhas do fluxo',active:true,tosidebar:true,console:false,tostatus:false,complete:'true',targetType:'full',x:490,y:270,wires:[]}
 ];
