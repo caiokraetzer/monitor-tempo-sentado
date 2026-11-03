@@ -8,11 +8,11 @@ A exigência compartilhada do professor define o conjunto **artigo + vídeo-demo
 | Montagem simulada e bibliotecas | `diagram.json`, `libraries.txt`, `platformio.ini`, `wokwi.toml`. |
 | MQTT e painel | `node-red/flows.json`, fontes do painel e `docs/MQTT.md`. |
 | Instruções de reprodução | `README.md`, `docs/EXECUCAO.md` e `docs/MONTAGEM.md`. |
-| Dados | Entradas sintéticas e exemplo identificados em `dados/`; acrescentar as coletas efetivas em `dados/coletas/`. |
+| Dados | Entradas e exemplo sintéticos identificados; coleta efetiva em [2026-11-03-wokwi-mqtt](../dados/coletas/2026-11-03-wokwi-mqtt/), com JSONL, CSV, metadados e análise. |
 | Verificação do código | Testes e workflow; consultar o estado efetivo em `docs/VALIDACAO.md` e no GitHub Actions. |
-| Simulação publicada | Após executar e salvar, registrar o link real do Wokwi no README e artigo. |
+| Simulação publicada | [Projeto Wokwi](https://wokwi.com/projects/479686134986460161) executado com recepção MQTT. Inserir o link também no artigo. |
 | Vídeo com MQTT | Ainda não gravado; mostrar circuito, estados, buzzer, publicação e recebimento remoto. Inserir o link real no artigo e README. |
-| Artigo final | Revisão em documento separado; não modificar a afirmação de testes previstos sem evidências. Inserir URL real do repositório. |
+| Artigo final | Incorporar o ensaio exploratório de [RESULTADOS_WOKWI.md](RESULTADOS_WOKWI.md), distinguir simulação de montagem física e inserir os links reais. Revisão do Word em etapa separada. |
 
 ## Roteiro sugerido para a demonstração
 

@@ -37,3 +37,9 @@ A lista de materiais e a pinagem permitem reproduzir o circuito virtual. A const
 ## Módulos e interfaces de comunicação
 
 O ESP32 é a plataforma de processamento e contém o módulo Wi-Fi usado no projeto. Não há módulo Ethernet, modem celular ou gateway físico adicional especificado. Na reprodução Wokwi, o acesso à internet é fornecido pela rede virtual do simulador. O HX711 condiciona/digitaliza o sinal da célula e se liga ao ESP32 por DT/SCK; o buzzer recebe sinal do GPIO23. O serviço remoto é o broker MQTT descrito em [MQTT.md](MQTT.md).
+
+## Identificadores do modelo virtual
+
+No modelo `wokwi-esp32-devkit-v1`, os pinos do diagrama têm prefixo D: **GPIO19 = `esp:D19`**, **GPIO18 = `esp:D18`** e **GPIO23 = `esp:D23`**. O firmware utiliza os números de GPIO 19, 18 e 23. Esses dois modos de nomear o mesmo pino não devem ser confundidos ao editar `diagram.json`.
+
+A execução integrada identificou e corrigiu conexões sem esse prefixo. A reprodução com a montagem corrigida foi executada no Wokwi; os resultados e dados estão em [RESULTADOS_WOKWI.md](RESULTADOS_WOKWI.md). Isso não altera o caráter conceitual da instalação mecânica física.

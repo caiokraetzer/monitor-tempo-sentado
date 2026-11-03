@@ -1,0 +1,23 @@
+Trechos transcritos do monitor serial do Wokwi durante a sessao corrigida.
+Nao e um log serial completo. Consulte node-red.jsonl para o registro completo do receptor.
+
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":39923}
+mack/ods3/7c92a1/cadeira01/evento {"tipo":"inicio","tempo_s":0.000,"uptime_ms":41426}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":0.000,"alerta":false,"uptime_ms":41426}
+SENSOR raw=3780 tara=0 carga_filtrada_kg=9.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":55.033,"alerta":false,"uptime_ms":96459}
+mack/ods3/7c92a1/cadeira01/evento {"tipo":"lembrete","tempo_s":60.006,"uptime_ms":101432}
+SENSOR raw=3780 tara=0 carga_filtrada_kg=9.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":60.006,"alerta":true,"uptime_ms":101432}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":135.026,"alerta":true,"uptime_ms":176452}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":140.027,"alerta":true,"uptime_ms":181453}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":265.046,"alerta":true,"uptime_ms":306472}
+mack/ods3/7c92a1/cadeira01/evento {"tipo":"fim","tempo_s":268.567,"uptime_ms":309993}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":309993}
+mack/ods3/7c92a1/cadeira01/evento {"tipo":"inicio","tempo_s":0.000,"uptime_ms":355013}

@@ -6,7 +6,7 @@ Revisão documental em 03/11/2026, baseada nos critérios fornecidos pelo profes
 
 | Critério fornecido | Localização | Situação documental e limite |
 |---|---|---|
-| Breve descrição do funcionamento e uso para reprodução | [README](../README.md) e [EXECUCAO.md](EXECUCAO.md) | Presente: objetivo, comportamento, montagem virtual, instalação, execução e coleta. Reprodução integrada ainda precisa ser executada e evidenciada. |
+| Breve descrição do funcionamento e uso para reprodução | [README](../README.md) e [EXECUCAO.md](EXECUCAO.md) | Presente: objetivo, comportamento, montagem virtual, instalação, execução e coleta. Reprodução integrada exploratória executada; [relato e evidências](RESULTADOS_WOKWI.md). |
 | Software desenvolvido e documentação de código | [Firmware](../firmware/ChairMonitor/), [Node-RED](../node-red/), [scripts](../scripts/) e [CODIGO.md](CODIGO.md) | Presente: fontes, funções, entradas/saídas, estados, arquitetura, dependências, configuração e limites. |
 | Hardware: plataformas, sensores, atuadores e peças/caixas quando aplicáveis | [MONTAGEM.md](MONTAGEM.md) e [diagrama](../diagram.json) | Presente para o circuito proposto e sua reprodução virtual: materiais, especificações, pinagem e adaptações. Não há caixa ou peça impressa desenvolvida; não há cotas de mecânica construída. A instalação física é conceitual e seu detalhamento mecânico permanece pendente. |
 | Hardware: plataformas e sensores | [MONTAGEM.md](MONTAGEM.md) | Presente: ESP32, célula de carga/HX711 e distinção entre referência física e modelo virtual. Este item se sobrepõe à linha anterior da rubrica. |
@@ -18,9 +18,9 @@ A simulação utiliza os arquivos fornecidos; não foram construídas peças de 
 
 O firmware implementa publicação MQTT por Wi-Fi/TCP/IP para um broker remoto; o Node-RED e o coletor assinam os tópicos desse broker. O contrato atual é de monitoramento, sem comando remoto para o ESP32.
 
-A documentação e a compilação mostram a implementação prevista, mas **a execução integrada com MQTT ainda não foi comprovada nesta versão**. A evidência deve permitir observar o dispositivo publicando e um receptor recebendo pela internet. O log serial isolado não é prova de entrega no broker.
+**A execução integrada com MQTT foi evidenciada em 03/11/2026:** o ESP32 simulado publicou no HiveMQ remoto, e o Node-RED e um assinante Python registraram 132 mensagens cada. Os arquivos e a análise estão em [RESULTADOS_WOKWI.md](RESULTADOS_WOKWI.md). O ensaio inclui um ciclo encerrado e um novo início; não representa toda a campanha de cinco repetições.
 
-A rubrica estabelece que o descumprimento do requisito básico de internet/MQTT limita a nota a um quarto do total. Não é possível concluir que esse requisito foi demonstrado somente pelos testes nativos e pela compilação.
+A rubrica estabelece que o descumprimento do requisito básico de internet/MQTT limita a nota a um quarto do total. Neste repositório, a evidência de comunicação vem dos JSONL/CSV recebidos do broker e da execução do receptor, além dos testes nativos e da compilação.
 
 ## Artigo, vídeo e acesso
 
@@ -28,8 +28,8 @@ A rubrica estabelece que o descumprimento do requisito básico de internet/MQTT 
 |---|---|
 | URL do GitHub inserida adequadamente no artigo | Usar https://github.com/caiokraetzer/monitor-tempo-sentado no texto do artigo, com identificação clara de que contém documentação e fonte. A publicação deste guia não insere automaticamente esse link no Word. |
 | Vídeo-demonstração no YouTube, até 3,0 pontos | Gravar a implementação e seu funcionamento, incluindo o caminho MQTT, publicar e inserir o link real no artigo. Pendente nesta versão. |
-| Apresentação da implementação | Executar o roteiro e preservar evidências do protótipo simulado. |
-| Dados do projeto | Entradas sintéticas e exemplo estão identificados em `dados/`; acrescentar mensagens realmente coletadas, metadados e relato da execução. |
+| Apresentação da implementação | Demonstração exploratória simulada e coleta concluídas; registrar e publicar o vídeo exigido. |
+| Dados do projeto | Entradas sintéticas identificadas e mensagens realmente recebidas, metadados e relato publicados em [RESULTADOS_WOKWI.md](RESULTADOS_WOKWI.md). |
 | Acesso do avaliador | O repositório é público; conferir o acesso ao vídeo e aos links que forem inseridos no artigo. |
 
 Segundo a rubrica, a ausência de vídeo, repositório ou ambos resulta em nota zero do projeto. Ter um repositório público e documentado atende a uma parte da entrega; ainda é necessário apresentar a implementação e inserir os links adequadamente no artigo.
@@ -38,4 +38,4 @@ Os critérios da seção 1 — introdução, materiais e métodos, resultados, c
 
 ## Evidências disponíveis
 
-As verificações efetivamente executadas estão em [VALIDACAO.md](VALIDACAO.md): testes do painel/exportação, 40 cenários nativos da lógica e compilação ESP32 nos dois perfis. Elas não representam ensaios Wokwi, avaliação física ou benefícios clínicos.
+As verificações efetivamente executadas estão em [VALIDACAO.md](VALIDACAO.md): testes do painel/exportação, 40 cenários nativos da lógica e compilação ESP32 nos dois perfis. A execução Wokwi com recepção MQTT foi acrescentada em [RESULTADOS_WOKWI.md](RESULTADOS_WOKWI.md). Nenhuma dessas verificações representa avaliação física ou comprovação de benefícios clínicos.

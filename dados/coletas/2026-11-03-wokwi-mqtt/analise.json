@@ -1,0 +1,56 @@
+{
+  "workflow_url": "https://github.com/caiokraetzer/monitor-tempo-sentado/actions/runs/41676404537",
+  "firmware_commit": "9ba0d0cf415ce25dfacdc744615f53dcc574a4df",
+  "firmware_sha256": "0e6c144f95fca3281c8c0ef14809b69e6cf51dffe5324c6e7dd5eda43c12dfb2",
+  "diagram_sha256": "52e5f116cea9c5128e62aaa8e6e1468cfbb3f606e605efa28bda7f3556fc67c0",
+  "n_paho": 132,
+  "n_node_red": 132,
+  "tipo_contagens": {
+    "telemetria": 120,
+    "evento": 7,
+    "status": 5
+  },
+  "divergencias_entre_multiconjuntos_de_topicos_e_payloads": 0,
+  "primeiro_lembrete_s": 60.006,
+  "erro_primeiro_lembrete_ms": 6,
+  "intervalos_repeticao_s": [
+    60.008,
+    60.006,
+    60.008
+  ],
+  "duracao_ciclo_encerrado_s": 268.567,
+  "sessoes": [
+    {
+      "indice": 1,
+      "registros": 42,
+      "inicio_recebimento_utc": "2026-11-03T16:39:42.992Z",
+      "fim_recebimento_utc": "2026-11-03T16:44:24.605Z",
+      "diagnostico": true,
+      "descricao": "pinos virtuais incorretos; primeira tentativa"
+    },
+    {
+      "indice": 2,
+      "registros": 8,
+      "inicio_recebimento_utc": "2026-11-03T16:44:24.849Z",
+      "fim_recebimento_utc": "2026-11-03T16:45:04.537Z",
+      "diagnostico": true,
+      "descricao": "diagnostico serial antes de corrigir a montagem"
+    },
+    {
+      "indice": 3,
+      "registros": 82,
+      "inicio_recebimento_utc": "2026-11-03T16:45:04.760Z",
+      "fim_recebimento_utc": "2026-11-03T16:51:29.763Z",
+      "diagnostico": false,
+      "descricao": "montagem corrigida; um ciclo completo e novo inicio"
+    }
+  ],
+  "metodo_segmentacao": "nova sessao quando uptime_ms diminui; mensagens de status sem uptime pertencem ao trecho corrente",
+  "limitacoes": [
+    "ensaio exploratorio; nao executa cinco repeticoes de todos os casos",
+    "nao comprova montagem fisica ou beneficios clinicos",
+    "contagens iguais entre receptores nao garantem ausencia de perdas comuns sob QoS 0",
+    "resposta HTTP e fluxo Node-RED verificados; renderizacao visual do painel nao foi inspecionada",
+    "forma de onda e duracoes do buzzer nao foram medidas"
+  ]
+}

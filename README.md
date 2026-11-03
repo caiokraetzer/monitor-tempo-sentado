@@ -12,9 +12,11 @@ O projeto concebe um dispositivo físico instalado em uma cadeira, com **ESP32, 
 
 ## Estado desta versão
 
-[Projeto salvo no Wokwi](https://wokwi.com/projects/479686134986460161). A inicialização e a conexão à rede virtual foram observadas; a coleta integrada de mensagens MQTT ainda está pendente.
+[Simulação no Wokwi](https://wokwi.com/projects/479686134986460161) · [Resultados da execução integrada](docs/RESULTADOS_WOKWI.md) · [Dados recebidos por MQTT](dados/coletas/2026-11-03-wokwi-mqtt/).
 
-O código, os arquivos de montagem e os procedimentos de reprodução estão incluídos. Consulte [VALIDACAO.md](docs/VALIDACAO.md) para saber exatamente quais verificações foram executadas. **Esta versão não contém resultados de execução do circuito no Wokwi, ensaios físicos ou vídeo gravado.** Os CSVs de entrada e o JSON ilustrativo são identificados como sintéticos. A presença deste repositório não substitui a demonstração com MQTT exigida na entrega final.
+O código, a montagem e as instruções estão incluídos. **Em 03/11/2026, a execução Wokwi → HiveMQ remoto → Node-RED e assinante Python recebeu 132 mensagens por receptor**, incluindo dois inícios, quatro lembretes e um fim. O primeiro lembrete ocorreu aos 60,006 s do ciclo. Consulte [RESULTADOS_WOKWI.md](docs/RESULTADOS_WOKWI.md) para evidências e limites, e [VALIDACAO.md](docs/VALIDACAO.md) para os testes de código.
+
+Os dados de entrada e o JSON ilustrativo continuam identificados como sintéticos; as mensagens da pasta de coleta foram efetivamente recebidas durante a simulação. Foi uma demonstração exploratória, sem cinco repetições de todos os casos. O vídeo no YouTube, a atualização do artigo e os ensaios físicos não estão incluídos nesta etapa.
 
 ## Conteúdo
 
@@ -98,7 +100,7 @@ No Windows, execute `test-monitor.exe` no lugar de `./test-monitor`. Após alter
 
 A correspondência dos itens do repositório exigidos no item 2.1 da rubrica está em [CRITERIOS_AVALIACAO.md](docs/CRITERIOS_AVALIACAO.md). As responsabilidades das funções, a arquitetura e os estados estão em [CODIGO.md](docs/CODIGO.md).
 
-Este repositório reúne fonte e dados de entrada necessários à reprodução. O [roteiro de entrega](docs/ENTREGA.md) identifica as evidências que precisam acompanhar artigo, vídeo e dados efetivamente coletados. O artigo existente ainda descreve implementação e ensaios como previstos; sua redação só deve ser atualizada para resultados após execução comprovada.
+Este repositório reúne fonte, entradas e dados efetivamente recebidos por MQTT durante a simulação. O [roteiro de entrega](docs/ENTREGA.md) identifica as evidências para artigo e vídeo. Os resultados exploratórios registrados devem ser incorporados ao artigo com os links reais; não devem ser descritos como ensaio físico ou campanha completa de cinco repetições.
 
 A solução se relaciona ao ODS 3 pelo incentivo à percepção da permanência prolongada no assento. Ela detecta carga, não identifica pessoas, não avalia postura e não fornece diagnóstico ou comprovação de eficácia clínica. O intervalo de 30 min é um parâmetro de engenharia, sem caráter de prescrição de saúde.
 

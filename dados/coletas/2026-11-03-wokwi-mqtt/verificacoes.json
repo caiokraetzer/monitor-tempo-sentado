@@ -1,0 +1,9 @@
+{
+  "dashboard_respondeu_http_200": true,
+  "paho_recebeu_telemetria": true,
+  "node_red_recebeu_telemetria": true,
+  "node_red_recebeu_inicio": true,
+  "node_red_recebeu_fim": true,
+  "node_red_recebeu_lembrete": true,
+  "node_red_recebeu_alerta_ativo": true
+}

@@ -1,0 +1,38 @@
+3 Nov 16:39:41 - [info] 
+
+Welcome to Node-RED
+===================
+
+3 Nov 16:39:41 - [info] Node-RED version: v4.1.17
+3 Nov 16:39:41 - [info] Node.js  version: v22.23.4
+3 Nov 16:39:41 - [info] Linux 7.0.0-1017-azure x64 LE
+3 Nov 16:39:41 - [info] Loading palette nodes
+3 Nov 16:39:42 - [info] Settings file  : /home/runner/work/monitor-tempo-sentado/monitor-tempo-sentado/node-red/settings.js
+3 Nov 16:39:42 - [info] Context store  : 'default' [module=memory]
+3 Nov 16:39:42 - [info] User directory : /home/runner/work/monitor-tempo-sentado/monitor-tempo-sentado/node-red
+3 Nov 16:39:42 - [warn] Projects disabled : set editorTheme.projects.enabled=true to enable
+3 Nov 16:39:42 - [info] Flows file     : /home/runner/work/monitor-tempo-sentado/monitor-tempo-sentado/node-red/flows.json
+3 Nov 16:39:42 - [warn] 
+
+---------------------------------------------------------------------
+Your flow credentials file is encrypted using a system-generated key.
+
+If the system-generated key is lost for any reason, your credentials
+file will not be recoverable, you will have to delete it and re-enter
+your credentials.
+
+You should set your own key using the 'credentialSecret' option in
+your settings file. Node-RED will then re-encrypt your credentials
+file using your chosen key the next time you deploy a change.
+---------------------------------------------------------------------
+
+3 Nov 16:39:42 - [info] Server now running at http://127.0.0.1:1880/
+3 Nov 16:39:42 - [warn] Encrypted credentials not found
+3 Nov 16:39:42 - [info] Starting flows
+3 Nov 16:39:42 - [info] [ui-base:Monitor IoT] Node-RED Dashboard 2.0 (v1.34.1) started at /dashboard
+3 Nov 16:39:42 - [info] [ui-base:Monitor IoT] Created socket.io server bound to Node-RED port at path /dashboard/socket.io
+3 Nov 16:39:42 - [info] Started flows
+3 Nov 16:39:42 - [info] [mqtt-broker:HiveMQ público] Connected to broker: mqtt://broker.hivemq.com:1883
+3 Nov 16:51:29 - [info] Stopping flows
+3 Nov 16:51:30 - [info] [mqtt-broker:HiveMQ público] Disconnected from broker: mqtt://broker.hivemq.com:1883
+3 Nov 16:51:30 - [info] Stopped flows

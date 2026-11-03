@@ -1,7 +1,7 @@
-# Registros coletados
+# Coletas de execução
 
-Ainda não há coletas do Wokwi ou do hardware nesta versão. Os arquivos de entrada e o payload ilustrativo estão em pastas próprias e não são resultados experimentais.
+A execução integrada de **03/11/2026** está em [2026-11-03-wokwi-mqtt](2026-11-03-wokwi-mqtt/): 132 mensagens recebidas por cada um dos dois assinantes, com JSONL, CSV, metadados, eventos e análise. Veja [RESULTADOS_WOKWI.md](../../docs/RESULTADOS_WOKWI.md) para a interpretação.
 
-Execute `python scripts/collect_mqtt.py --seconds 180` durante a simulação. O coletor cria uma pasta com data UTC e identificador, contendo JSONL, metadados e CSV quando as mensagens puderem ser convertidas. Não sobrescreve execuções anteriores.
+Os dados completos incluem duas sessões de diagnóstico e a sessão com o diagrama corrigido. O recorte da sessão corrigida não substitui os arquivos completos. As cargas foram simuladas; a transmissão e o recebimento das mensagens ocorreram na execução.
 
-Adicione à pasta um `ensaio.md` com origem (Wokwi/hardware), perfil, versão do código, horário, cargas aplicadas, caso/repetição, falhas e comparação entre esperado e observado. Inclua somente resultados efetivamente observados. Não use o horário de recebimento para medir o atraso do alarme: a referência é `uptime_ms` do dispositivo.
+Para uma nova coleta, execute `python scripts/collect_mqtt.py --seconds 180` durante a simulação. O coletor cria uma pasta com data UTC e identificador, sem sobrescrever execuções anteriores. Acrescente um relato com origem, perfil, commit, cargas aplicadas, casos executados, falhas e comparação entre esperado e observado.

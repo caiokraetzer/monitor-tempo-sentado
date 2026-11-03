@@ -103,3 +103,9 @@ MQTT com QoS 0 não garante entrega. O firmware não tem persistência nem reenv
 Parâmetros funcionais são alterados em `config.h` ou por definições de compilação. Segredos e calibração física ficam no arquivo ignorado `local_config.h`. O fator virtual 420 não serve como calibração do sensor físico.
 
 Após alterar processamento, interface ou diagrama, gere novamente `node scripts/build-flow.cjs`. Consulte [VALIDACAO.md](VALIDACAO.md) e os testes incluídos para distinguir lógica verificada, compilação e execução integrada ainda pendente.
+
+## Diagnóstico da leitura observado na execução
+
+O firmware também mantém `diagnosticRaw`, a última amostra bruta, e imprime `SENSOR raw=... tara=... carga_filtrada_kg=...` quando publica o estado. Essa linha é de diagnóstico serial; não é enviada como tópico MQTT nem modifica o esquema de telemetria. Ela ajudou a identificar as conexões incorretas no diagrama.
+
+Na sessão corrigida foram observados 8.400 → 20 kg e 3.780 → 9 kg, usando o fator virtual 420. A fonte publicada é a mesma baixada do Wokwi e identificada por hash em [RESULTADOS_WOKWI.md](RESULTADOS_WOKWI.md).
