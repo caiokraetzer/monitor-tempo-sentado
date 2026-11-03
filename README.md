@@ -1,5 +1,7 @@
 # Monitoramento do tempo sentado com IoT para incentivo a pausas
 
+[![Validação](https://github.com/caiokraetzer/monitor-tempo-sentado/actions/workflows/validate.yml/badge.svg)](https://github.com/caiokraetzer/monitor-tempo-sentado/actions/workflows/validate.yml)
+
 Repositório: https://github.com/caiokraetzer/monitor-tempo-sentado
 
 Projeto acadêmico da disciplina **Objetos Inteligentes Conectados — Universidade Presbiteriana Mackenzie**.
