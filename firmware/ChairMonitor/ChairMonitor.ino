@@ -6,6 +6,7 @@
 #include "Monitor.h"
 
 HX711 scale;
+long diagnosticRaw=0;
 Monitor monitor(REMINDER_MS);
 struct Packet { char topic[100]; char payload[220]; };
 QueueHandle_t telemetryQueue, eventQueue;
@@ -26,6 +27,7 @@ void publishState(uint32_t now) {
   snprintf(json,sizeof(json),"{\"estado\":\"%s\",\"ocupado\":%s,\"tempo_s\":%.3f,\"alerta\":%s,\"uptime_ms\":%lu}",
     monitor.state(),!monitor.available?"null":monitor.occupied?"true":"false",
     monitor.elapsed(now)/1000.0,monitor.alert?"true":"false",(unsigned long)now);
+  Serial.printf("SENSOR raw=%ld tara=%ld carga_filtrada_kg=%.3f\n", diagnosticRaw, scale.get_offset(), monitor.load);
   emitPacket(false,"telemetria",json);
 }
 // Som sem delay: 200 ms ligado, 200 desligado, três pulsos.
@@ -103,7 +105,7 @@ void loop() {
   if (uint32_t(now-sampleAt)>=100) {
     sampleAt=now;
     if (scale.is_ready()) {
-      long raw=scale.read(); // somente quando is_ready; não usa read_average/tare bloqueantes
+      long raw=scale.read(); diagnosticRaw=raw; // somente quando is_ready; não usa read_average/tare bloqueantes
       if (!calibrated) {
         tareSum+=raw;
         if (++tareCount==10) {

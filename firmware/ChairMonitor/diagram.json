@@ -11,9 +11,9 @@
   "connections": [
     ["esp:VIN","hx:VCC","red",[]],
     ["esp:GND.1","hx:GND","black",[]],
-    ["esp:19","hx:DT","green",[]],
-    ["esp:18","hx:SCK","blue",[]],
-    ["esp:23","r1:1","orange",[]],
+    ["esp:D19","hx:DT","green",[]],
+    ["esp:D18","hx:SCK","blue",[]],
+    ["esp:D23","r1:1","orange",[]],
     ["r1:2","buzzer:2","orange",[]],
     ["buzzer:1","esp:GND.2","black",[]],
     ["esp:TX0","$serialMonitor:RX","",[]],
