@@ -1,0 +1,4 @@
+Solicitacao de coleta integrada Wokwi + Node-RED + receptor MQTT.
+Projeto: https://wokwi.com/projects/479686134986460161
+Execucao manual iniciada em 03/11/2026 com aba do simulador em primeiro plano.
+Preservar somente mensagens realmente recebidas do broker.
