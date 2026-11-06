@@ -34,3 +34,7 @@ Não foram executados montagem mecânica física, ensaios com pessoas ou avalia�
 - Quatro novos testes da análise temporal aprovados: correlação com deslocamento conhecido, necessidade de sondas, quatro observações e confirmação GPIO.
 - Validador JSON/fluxo/sincronização novamente aprovado.
 - As novas verificações não substituem os ensaios físicos nem o vídeo exigido.
+
+## Validação remota da fonte instrumentada
+
+A execução [42153044335](https://github.com/caiokraetzer/monitor-tempo-sentado/actions/runs/42153044335), no commit 8fb093b227f627ea98227643e1dff60be3af95c3, concluiu com sucesso: cinco testes do painel, seis testes Python (dois de exportação e quatro da análise temporal), validador estrutural, 40 cenários C++ e compilação ESP32 nos perfis de 60 s e 1.800 s. Os binários e ELF foram preservados como artefatos do workflow.
