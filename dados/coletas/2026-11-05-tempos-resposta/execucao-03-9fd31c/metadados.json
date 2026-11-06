@@ -1,0 +1,101 @@
+{
+  "data_local": "2026-11-05",
+  "fuso_local": "America/Sao_Paulo",
+  "origem": "ESP32 no Wokwi -> broker.hivemq.com -> receptor paho-mqtt 2.1.0",
+  "inicio_utc": "2026-11-06T02:17:32.316984+00:00",
+  "fim_utc": "2026-11-06T02:25:11.873693+00:00",
+  "execucao": "9fd31c",
+  "medidas_sensor": 4,
+  "medidas_atuador": 4,
+  "fonte": "fonte-wokwi-executada.zip",
+  "hashes": "fonte-hashes.json",
+  "metodo": "docs/TEMPOS_RESPOSTA.md",
+  "eventos": [
+    [
+      {
+        "tipo": "inicio",
+        "tempo_s": 0.0,
+        "uptime_ms": 48017
+      },
+      "2026-11-06T02:18:58.929178+00:00"
+    ],
+    [
+      {
+        "tipo": "fim",
+        "tempo_s": 25.437,
+        "uptime_ms": 73454
+      },
+      "2026-11-06T02:19:25.733023+00:00"
+    ],
+    [
+      {
+        "tipo": "inicio",
+        "tempo_s": 0.0,
+        "uptime_ms": 90465
+      },
+      "2026-11-06T02:19:43.023173+00:00"
+    ],
+    [
+      {
+        "tipo": "fim",
+        "tempo_s": 40.13,
+        "uptime_ms": 130595
+      },
+      "2026-11-06T02:20:24.594301+00:00"
+    ],
+    [
+      {
+        "tipo": "inicio",
+        "tempo_s": 0.0,
+        "uptime_ms": 167913
+      },
+      "2026-11-06T02:21:03.309330+00:00"
+    ],
+    [
+      {
+        "tipo": "fim",
+        "tempo_s": 23.218,
+        "uptime_ms": 191131
+      },
+      "2026-11-06T02:21:27.352665+00:00"
+    ],
+    [
+      {
+        "tipo": "inicio",
+        "tempo_s": 0.0,
+        "uptime_ms": 219245
+      },
+      "2026-11-06T02:21:56.739807+00:00"
+    ],
+    [
+      {
+        "tipo": "lembrete",
+        "tempo_s": 60.009,
+        "uptime_ms": 279254
+      },
+      "2026-11-06T02:22:59.088602+00:00"
+    ],
+    [
+      {
+        "tipo": "lembrete",
+        "tempo_s": 120.017,
+        "uptime_ms": 339262
+      },
+      "2026-11-06T02:24:01.889257+00:00"
+    ],
+    [
+      {
+        "tipo": "fim",
+        "tempo_s": 129.985,
+        "uptime_ms": 349230
+      },
+      "2026-11-06T02:24:13.007173+00:00"
+    ]
+  ],
+  "limites": [
+    "Simulação, sem montagem física",
+    "Latências unidirecionais estimadas por correlação de relógios",
+    "Margem baseada em RTT; não é intervalo de confiança estatístico",
+    "GPIO virtual observado; sem medição acústica"
+  ]
+}

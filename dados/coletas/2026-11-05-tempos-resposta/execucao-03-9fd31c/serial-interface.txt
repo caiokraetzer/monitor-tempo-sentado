@@ -1,0 +1,155 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:1156
+load:0x40078000,len:11456
+ho 0 tail 12 room 4
+load:0x40080400,len:2972
+entry 0x400805dc
+INICIALIZACAO: mantenha o assento vazio para tara; perfil de lembrete em ms:
+60000
+TARA CONCLUIDA: aguarde confirmacao de assento vazio
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":4894}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":9897}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":14899}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":19901}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":24903}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":29906}
+ENSAIO 9fd31c: MQTT pronto; comando remoto e cronometros instrumentados
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":34908}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":39910}
+ENSAIO_ATUADOR {"id":1,"received_us":44485576,"action_us":44494535,"gpio":23,"level":1}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":44914}
+mack/ods3/7c92a1/cadeira01/ensaio-9fd31c/sensor {"id":1,"detected_us":48017710,"load_kg":20.000,"estado":"ocupado"}
+mack/ods3/7c92a1/cadeira01/evento {"tipo":"inicio","tempo_s":0.000,"uptime_ms":48017}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":0.000,"alerta":false,"uptime_ms":48017}
+ENSAIO_ATUADOR {"id":2,"received_us":48224798,"action_us":48235029,"gpio":23,"level":1}
+ENSAIO_ATUADOR {"id":3,"received_us":51880576,"action_us":51887903,"gpio":23,"level":1}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":5.001,"alerta":false,"uptime_ms":53018}
+ENSAIO_ATUADOR {"id":4,"received_us":55711576,"action_us":55723029,"gpio":23,"level":1}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":10.007,"alerta":false,"uptime_ms":58024}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":15.010,"alerta":false,"uptime_ms":63027}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":20.013,"alerta":false,"uptime_ms":68030}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":25.015,"alerta":false,"uptime_ms":73032}
+mack/ods3/7c92a1/cadeira01/evento {"tipo":"fim","tempo_s":25.437,"uptime_ms":73454}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":73454}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":78458}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":83460}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=12.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":88462}
+mack/ods3/7c92a1/cadeira01/ensaio-9fd31c/sensor {"id":2,"detected_us":90465711,"load_kg":20.000,"estado":"ocupado"}
+mack/ods3/7c92a1/cadeira01/evento {"tipo":"inicio","tempo_s":0.000,"uptime_ms":90465}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":0.000,"alerta":false,"uptime_ms":90465}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":5.006,"alerta":false,"uptime_ms":95471}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":10.009,"alerta":false,"uptime_ms":100474}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":15.012,"alerta":false,"uptime_ms":105477}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":20.015,"alerta":false,"uptime_ms":110480}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":25.018,"alerta":false,"uptime_ms":115483}
+SENSOR raw=0 tara=0 carga_filtrada_kg=8.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":30.021,"alerta":false,"uptime_ms":120486}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":35.024,"alerta":false,"uptime_ms":125489}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":40.027,"alerta":false,"uptime_ms":130492}
+mack/ods3/7c92a1/cadeira01/evento {"tipo":"fim","tempo_s":40.130,"uptime_ms":130595}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":130595}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":135599}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":140601}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":145603}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":150605}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":155607}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":160609}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":165611}
+mack/ods3/7c92a1/cadeira01/ensaio-9fd31c/sensor {"id":3,"detected_us":167913710,"load_kg":20.000,"estado":"ocupado"}
+mack/ods3/7c92a1/cadeira01/evento {"tipo":"inicio","tempo_s":0.000,"uptime_ms":167913}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":0.000,"alerta":false,"uptime_ms":167913}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":5.006,"alerta":false,"uptime_ms":172919}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":10.009,"alerta":false,"uptime_ms":177922}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":15.012,"alerta":false,"uptime_ms":182925}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":20.015,"alerta":false,"uptime_ms":187928}
+mack/ods3/7c92a1/cadeira01/evento {"tipo":"fim","tempo_s":23.218,"uptime_ms":191131}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":191131}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":196135}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":201137}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":206139}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":211141}
+SENSOR raw=0 tara=0 carga_filtrada_kg=0.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"livre","ocupado":false,"tempo_s":0.000,"alerta":false,"uptime_ms":216143}
+mack/ods3/7c92a1/cadeira01/ensaio-9fd31c/sensor {"id":4,"detected_us":219245710,"load_kg":20.000,"estado":"ocupado"}
+mack/ods3/7c92a1/cadeira01/evento {"tipo":"inicio","tempo_s":0.000,"uptime_ms":219245}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":0.000,"alerta":false,"uptime_ms":219245}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":5.006,"alerta":false,"uptime_ms":224251}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":10.009,"alerta":false,"uptime_ms":229254}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":15.012,"alerta":false,"uptime_ms":234257}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":20.015,"alerta":false,"uptime_ms":239260}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":25.018,"alerta":false,"uptime_ms":244263}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":30.021,"alerta":false,"uptime_ms":249266}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":35.024,"alerta":false,"uptime_ms":254269}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":40.027,"alerta":false,"uptime_ms":259272}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":45.030,"alerta":false,"uptime_ms":264275}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":50.033,"alerta":false,"uptime_ms":269278}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":55.036,"alerta":false,"uptime_ms":274281}
+mack/ods3/7c92a1/cadeira01/evento {"tipo":"lembrete","tempo_s":60.009,"uptime_ms":279254}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":60.009,"alerta":true,"uptime_ms":279254}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":65.016,"alerta":true,"uptime_ms":284261}
+SENSOR raw=8400 tara=0 carga_filtrada_kg=20.000
+mack/ods3/7c92a1/cadeira01/telemetria {"estado":"ocupado","ocupado":true,"tempo_s":70.018,"alerta":true,"uptime_ms":289263}

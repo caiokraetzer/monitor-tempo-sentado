@@ -16,7 +16,13 @@ O projeto concebe um dispositivo físico instalado em uma cadeira, com **ESP32, 
 
 O código, a montagem e as instruções estão incluídos. **Em 03/11/2026, a execução Wokwi → HiveMQ remoto → Node-RED e assinante Python recebeu 132 mensagens por receptor**, incluindo dois inícios, quatro lembretes e um fim. O primeiro lembrete ocorreu aos 60,006 s do ciclo. Consulte [RESULTADOS_WOKWI.md](docs/RESULTADOS_WOKWI.md) para evidências e limites, e [VALIDACAO.md](docs/VALIDACAO.md) para os testes de código.
 
-Os dados de entrada e o JSON ilustrativo continuam identificados como sintéticos; as mensagens da pasta de coleta foram efetivamente recebidas durante a simulação. Foi uma demonstração exploratória, sem cinco repetições de todos os casos. O vídeo no YouTube, a atualização do artigo e os ensaios físicos não estão incluídos nesta etapa.
+Os dados de entrada e o JSON ilustrativo continuam identificados como sintéticos; as mensagens da pasta de coleta foram efetivamente recebidas durante a simulação. Foi uma demonstração exploratória, sem cinco repetições de todos os casos. O vídeo no YouTube e os ensaios físicos continuam como etapas separadas. O artigo foi revisado a partir dos resultados disponíveis.
+
+## Ensaio de tempos de resposta — 05/11/2026
+
+Foram concluídas quatro detecções confirmadas do HX711 e quatro comandos MQTT de teste do buzzer na versão instrumentada do Wokwi. As estimativas médias unidirecionais foram **260,5 ms** para sensor → recepção e **413,4 ms** para comando → GPIO. A média local entre recepção do comando no ESP32 e observação de HIGH foi **9,493 ms**.
+
+O método usa sondas para correlacionar relógios e tem margens amplas; consulte [TEMPOS_RESPOSTA.md](docs/TEMPOS_RESPOSTA.md), [CSV e dados brutos](dados/coletas/2026-11-05-tempos-resposta/execucao-03-9fd31c/) e os scripts de reprodução. As estimativas não devem ser interpretadas como tempos exatos de rede ou resposta acústica. O vídeo com identificação e rosto do aluno continua a ser gravado pelo autor.
 
 ## Conteúdo
 
@@ -100,7 +106,7 @@ No Windows, execute `test-monitor.exe` no lugar de `./test-monitor`. Após alter
 
 A correspondência dos itens do repositório exigidos no item 2.1 da rubrica está em [CRITERIOS_AVALIACAO.md](docs/CRITERIOS_AVALIACAO.md). As responsabilidades das funções, a arquitetura e os estados estão em [CODIGO.md](docs/CODIGO.md).
 
-Este repositório reúne fonte, entradas e dados efetivamente recebidos por MQTT durante a simulação. O [roteiro de entrega](docs/ENTREGA.md) identifica as evidências para artigo e vídeo. Os resultados exploratórios registrados devem ser incorporados ao artigo com os links reais; não devem ser descritos como ensaio físico ou campanha completa de cinco repetições.
+Este repositório reúne fonte, entradas e dados efetivamente recebidos por MQTT durante a simulação. O [roteiro de entrega](docs/ENTREGA.md) identifica as evidências para artigo e vídeo. O Word revisado incorpora os resultados das duas campanhas, suas tabelas, gráficos, capturas e links; não devem ser descritos como ensaio físico ou campanha completa de cinco repetições.
 
 A solução se relaciona ao ODS 3 pelo incentivo à percepção da permanência prolongada no assento. Ela detecta carga, não identifica pessoas, não avalia postura e não fornece diagnóstico ou comprovação de eficácia clínica. O intervalo de 30 min é um parâmetro de engenharia, sem caráter de prescrição de saúde.
 

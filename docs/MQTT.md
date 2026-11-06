@@ -32,4 +32,19 @@ O Node-RED recebe payload em UTF-8 e faz conversão JSON dentro da função de v
 
 ESP32 e Node-RED iniciam conexões ao mesmo broker na internet; não precisam de conexão direta entre si. A presença de um painel em localhost não torna o caminho ESP32 → broker remoto → Node-RED uma comunicação exclusivamente local.
 
-O contrato implementado publica dados de monitoramento; não há assinatura de comandos no ESP32 ou controle remoto do buzzer pelo navegador. Esse limite está declarado para que a documentação corresponda ao software. A demonstração deve mostrar o recebimento remoto das mensagens, além das linhas impressas no serial.
+O contrato de monitoramento foi preservado. A versão instrumentada acrescenta comandos remotos de teste e sondas no subprefixo ensaio-9fd31c. O coletor Python envia as ordens; o painel Node-RED original continua exibindo os tópicos de monitoramento. A demonstração deve mostrar envio e recebimento reais pelo broker, além do serial.
+
+## Extensão de medição, executada em 05/11/2026
+
+Prefixo: mack/ods3/7c92a1/cadeira01/ensaio-9fd31c. Todos os tópicos abaixo usam QoS 0 e mensagens não retidas.
+
+| Sufixo | Direção | Conteúdo |
+|---|---|---|
+| /sync_req | Coletor → ESP32 | Identificador da sonda. |
+| /sync | ESP32 → coletor | id, d1_us e d2_us: recepção e resposta no relógio do dispositivo. |
+| /comando | Coletor → ESP32 | id e acao igual a teste_buzzer. |
+| /atuador | ESP32 → coletor | id, received_us, action_us, gpio=23 e level=1 após observação do nível alto. |
+| /sensor | ESP32 → coletor | id, detected_us, load_kg e estado na confirmação de ocupação. |
+| /ready | ESP32 → coletor | Identificação da instrumentação e componentes. |
+
+Os IDs relacionam cada detecção ou comando ao seu registro no receptor. Tempos do dispositivo estão em microssegundos. O coletor registra tempo monotônico de envio/recepção e UTC para rastreabilidade. As regras e margens da correlação estão em [TEMPOS_RESPOSTA.md](TEMPOS_RESPOSTA.md).

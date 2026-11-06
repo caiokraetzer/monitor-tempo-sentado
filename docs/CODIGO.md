@@ -96,16 +96,33 @@ O retorno possui duas saídas: a primeira alimenta o painel; a segunda contém a
 | Payload MQTT | Duração em segundos, `uptime_ms` em ms e estado textual. |
 | Registro do receptor | Data UTC do recebimento; não substitui o relógio do dispositivo para avaliar temporização. |
 
-MQTT com QoS 0 não garante entrega. O firmware não tem persistência nem reenvio histórico. O painel documenta o que recebeu, não prova que todas as mensagens emitidas chegaram. O contrato não inclui tópico de comando remoto: a comunicação prevista é monitoramento pela internet; os lembretes são decididos localmente no ESP32.
+MQTT com QoS 0 não garante entrega. O firmware não tem persistência nem reenvio histórico. O painel documenta o que recebeu, não prova que todas as mensagens emitidas chegaram. Os lembretes permanecem decididos localmente. A extensão instrumentada acrescenta o tópico de comando remoto de teste, descrito em TEMPOS_RESPOSTA.md.
 
 ## Alterações e verificações
 
 Parâmetros funcionais são alterados em `config.h` ou por definições de compilação. Segredos e calibração física ficam no arquivo ignorado `local_config.h`. O fator virtual 420 não serve como calibração do sensor físico.
 
-Após alterar processamento, interface ou diagrama, gere novamente `node scripts/build-flow.cjs`. Consulte [VALIDACAO.md](VALIDACAO.md) e os testes incluídos para distinguir lógica verificada, compilação e execução integrada ainda pendente.
+Após alterar processamento, interface ou diagrama, gere novamente `node scripts/build-flow.cjs`. Consulte [VALIDACAO.md](VALIDACAO.md) e os testes incluídos para distinguir lógica verificada, compilação e execução integrada documentada.
 
 ## Diagnóstico da leitura observado na execução
 
 O firmware também mantém `diagnosticRaw`, a última amostra bruta, e imprime `SENSOR raw=... tara=... carga_filtrada_kg=...` quando publica o estado. Essa linha é de diagnóstico serial; não é enviada como tópico MQTT nem modifica o esquema de telemetria. Ela ajudou a identificar as conexões incorretas no diagrama.
 
 Na sessão corrigida foram observados 8.400 → 20 kg e 3.780 → 9 kg, usando o fator virtual 420. A fonte publicada é a mesma baixada do Wokwi e identificada por hash em [RESULTADOS_WOKWI.md](RESULTADOS_WOKWI.md).
+
+## Instrumentação de tempos de resposta
+
+As funções de medição estão no próprio ChairMonitor.ino, preservado no ZIP baixado do Wokwi:
+
+| Função | Papel |
+|---|---|
+| measureParseId() | Lê o identificador positivo do contrato de ensaio. |
+| measureCallback() | Registra o instante de recepção; responde sondas ou enfileira comando reconhecido. |
+| measureSubscribe() | Assina sondas e comandos após a conexão MQTT. |
+| measureLocal() | Consome comandos no laço local e controla o padrão sonoro com tone()/noTone(). |
+| measureWave() | Observa o GPIO23 a cada 50 µs apenas até o primeiro HIGH; registra ação e desliga o observador. |
+| measureNetwork() | Publica as confirmações produzidas pelo observador na tarefa de rede. |
+| measureSensor() | Emite trace com ID e tempo de confirmação de ocupação, sem fabricar amostra de carga. |
+| measureBegin() | Cria filas e timer de observação, inicialmente inativo. |
+
+A tarefa MQTT não controla diretamente o som: entrega uma ordem à fila local. A confirmação level=1 documenta a ação elétrica virtual. Não mede resposta acústica. O plano e os resultados de quatro medições por componente estão em [TEMPOS_RESPOSTA.md](TEMPOS_RESPOSTA.md).
