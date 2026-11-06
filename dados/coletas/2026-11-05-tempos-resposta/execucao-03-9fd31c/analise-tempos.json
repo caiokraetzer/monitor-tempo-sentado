@@ -1,0 +1,197 @@
+{
+  "metodo": "correlacao local linear entre sondas adjacentes; pontos medios dos quatro timestamps; estimativas unidirecionais",
+  "sondas": 251,
+  "medidas": [
+    {
+      "numero": 1,
+      "componente": "Sensor HX711",
+      "resposta_ms": 199.86105951333045,
+      "incerteza_relogio_ms": 409.85208673002836,
+      "origem": {
+        "id": 1,
+        "detected_us": 48017710,
+        "load_kg": 20.0,
+        "estado": "ocupado",
+        "received_host_us": 95793941.6,
+        "utc": "2026-11-06T02:18:58.658454+00:00"
+      },
+      "correlacao": {
+        "probe_before": 1056,
+        "probe_after": 1057,
+        "weight": 0.9656692749421347,
+        "clock_rate_host_per_device": 1.1077541800484298
+      }
+    },
+    {
+      "numero": 2,
+      "componente": "Sensor HX711",
+      "resposta_ms": 263.159936678499,
+      "incerteza_relogio_ms": 345.577431600405,
+      "origem": {
+        "id": 2,
+        "detected_us": 90465711,
+        "load_kg": 20.0,
+        "estado": "ocupado",
+        "received_host_us": 139941105.8,
+        "utc": "2026-11-06T02:19:42.806135+00:00"
+      },
+      "correlacao": {
+        "probe_before": 1085,
+        "probe_after": 1086,
+        "weight": 0.7769415227319256,
+        "clock_rate_host_per_device": 1.0517981960944724
+      }
+    },
+    {
+      "numero": 3,
+      "componente": "Sensor HX711",
+      "resposta_ms": 253.78442412957548,
+      "incerteza_relogio_ms": 371.6627892827337,
+      "origem": {
+        "id": 3,
+        "detected_us": 167913710,
+        "load_kg": 20.0,
+        "estado": "ocupado",
+        "received_host_us": 220216302.1,
+        "utc": "2026-11-06T02:21:03.083230+00:00"
+      },
+      "correlacao": {
+        "probe_before": 1138,
+        "probe_after": 1139,
+        "weight": 0.31570337047112235,
+        "clock_rate_host_per_device": 1.1637692151199452
+      }
+    },
+    {
+      "numero": 4,
+      "componente": "Sensor HX711",
+      "resposta_ms": 325.19726814877987,
+      "incerteza_relogio_ms": 308.61895064491335,
+      "origem": {
+        "id": 4,
+        "detected_us": 219245710,
+        "load_kg": 20.0,
+        "estado": "ocupado",
+        "received_host_us": 273655047.2,
+        "utc": "2026-11-06T02:21:56.522784+00:00"
+      },
+      "correlacao": {
+        "probe_before": 1173,
+        "probe_after": 1174,
+        "weight": 0.2364040660522341,
+        "clock_rate_host_per_device": 1.0228507500453705
+      }
+    },
+    {
+      "numero": 1,
+      "componente": "Buzzer GPIO23",
+      "resposta_ms": 411.40053320385516,
+      "incerteza_relogio_ms": 313.41338786058304,
+      "processamento_local_ms": 8.959,
+      "ida_e_volta_confirmacao_ms": 661.219900000006,
+      "origem": {
+        "id": 1,
+        "received_us": 44485576,
+        "action_us": 44494535,
+        "gpio": 23,
+        "level": 1,
+        "sent_host_us": 91345266.0,
+        "ack_host_us": 92006485.9,
+        "utc": "2026-11-06T02:18:54.871304+00:00"
+      },
+      "correlacao": {
+        "probe_before": 1054,
+        "probe_after": 1055,
+        "weight": 0.5282656443207291,
+        "clock_rate_host_per_device": 1.1566491068588647
+      }
+    },
+    {
+      "numero": 2,
+      "componente": "Buzzer GPIO23",
+      "resposta_ms": 420.8927227556109,
+      "incerteza_relogio_ms": 397.57573072458024,
+      "processamento_local_ms": 10.231,
+      "ida_e_volta_confirmacao_ms": 866.900799999997,
+      "origem": {
+        "id": 2,
+        "received_us": 48224798,
+        "action_us": 48235029,
+        "gpio": 23,
+        "level": 1,
+        "sent_host_us": 95443051.0,
+        "ack_host_us": 96309951.8,
+        "utc": "2026-11-06T02:18:59.174484+00:00"
+      },
+      "correlacao": {
+        "probe_before": 1057,
+        "probe_after": 1058,
+        "weight": 0.1498890386846566,
+        "clock_rate_host_per_device": 1.2833448240341514
+      }
+    },
+    {
+      "numero": 3,
+      "componente": "Buzzer GPIO23",
+      "resposta_ms": 443.36932248178124,
+      "incerteza_relogio_ms": 321.02027117541746,
+      "processamento_local_ms": 7.327,
+      "ida_e_volta_confirmacao_ms": 667.6806000000089,
+      "origem": {
+        "id": 3,
+        "received_us": 51880576,
+        "action_us": 51887903,
+        "gpio": 23,
+        "level": 1,
+        "sent_host_us": 99509189.1,
+        "ack_host_us": 100176869.7,
+        "utc": "2026-11-06T02:19:03.041476+00:00"
+      },
+      "correlacao": {
+        "probe_before": 1059,
+        "probe_after": 1060,
+        "weight": 0.8809119133574007,
+        "clock_rate_host_per_device": 1.1030185920577618
+      }
+    },
+    {
+      "numero": 4,
+      "componente": "Buzzer GPIO23",
+      "resposta_ms": 378.00937491983177,
+      "incerteza_relogio_ms": 308.8902748487197,
+      "processamento_local_ms": 11.453,
+      "ida_e_volta_confirmacao_ms": 646.403700000003,
+      "origem": {
+        "id": 4,
+        "received_us": 55711576,
+        "action_us": 55723029,
+        "gpio": 23,
+        "level": 1,
+        "sent_host_us": 103560865.5,
+        "ack_host_us": 104207269.2,
+        "utc": "2026-11-06T02:19:07.072141+00:00"
+      },
+      "correlacao": {
+        "probe_before": 1062,
+        "probe_after": 1063,
+        "weight": 0.5081775502818221,
+        "clock_rate_host_per_device": 1.1050477569513693
+      }
+    }
+  ],
+  "resumo": {
+    "Sensor HX711": {
+      "n": 4,
+      "media_ms": 260.5006721175462,
+      "incerteza_media_conservadora_ms": 358.9278145645201,
+      "desvio_padrao_amostral_ms": 51.36468251583982
+    },
+    "Buzzer GPIO23": {
+      "n": 4,
+      "media_ms": 413.41798834026974,
+      "incerteza_media_conservadora_ms": 335.22491615232514,
+      "desvio_padrao_amostral_ms": 27.14647982717602
+    }
+  },
+  "registros": 963
+}

@@ -1,0 +1,45 @@
+{"kind": "metadados", "utc": "2026-11-06T02:11:35.298738+00:00", "host_us": 9598780.3, "clock": "perf_counter_ns", "broker": "broker.hivemq.com:1883", "run": "9fd31b", "method": "sondas MQTT, relógios correlacionados por pontos médios; valores unidirecionais estimados"}
+{"kind": "conexao", "utc": "2026-11-06T02:11:35.504665+00:00", "host_us": 9804267.8, "reason": "Success"}
+{"kind": "tx", "utc": "2026-11-06T02:11:35.601622+00:00", "host_us": 9901284.8, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1001}}
+{"kind": "rx", "utc": "2026-11-06T02:11:35.711987+00:00", "host_us": 10011446.8, "topic": "mack/ods3/7c92a1/cadeira01/status", "payload": "offline", "retain": true}
+{"kind": "rx", "utc": "2026-11-06T02:11:35.917621+00:00", "host_us": 10217082.4, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1001}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:11:37.121364+00:00", "host_us": 11421073.1, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1002}}
+{"kind": "rx", "utc": "2026-11-06T02:11:37.327798+00:00", "host_us": 11627363.2, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1002}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:11:38.635177+00:00", "host_us": 12934980.0, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1003}}
+{"kind": "rx", "utc": "2026-11-06T02:11:38.842330+00:00", "host_us": 13141896.0, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1003}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:11:40.156377+00:00", "host_us": 14456055.1, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1004}}
+{"kind": "rx", "utc": "2026-11-06T02:11:40.362014+00:00", "host_us": 14662200.0, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1004}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:11:41.673668+00:00", "host_us": 15973145.9, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1005}}
+{"kind": "rx", "utc": "2026-11-06T02:11:41.879325+00:00", "host_us": 16179259.4, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1005}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:11:43.196220+00:00", "host_us": 17495764.1, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1006}}
+{"kind": "rx", "utc": "2026-11-06T02:11:43.402222+00:00", "host_us": 17701942.1, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1006}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:11:44.713557+00:00", "host_us": 19012992.9, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1007}}
+{"kind": "rx", "utc": "2026-11-06T02:11:44.920138+00:00", "host_us": 19219610.1, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1007}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:11:46.235256+00:00", "host_us": 20534935.4, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1008}}
+{"kind": "rx", "utc": "2026-11-06T02:11:46.442417+00:00", "host_us": 20741983.3, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1008}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:11:47.749896+00:00", "host_us": 22049257.5, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1009}}
+{"kind": "rx", "utc": "2026-11-06T02:11:47.956468+00:00", "host_us": 22255547.3, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1009}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:11:49.272493+00:00", "host_us": 23571870.3, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1010}}
+{"kind": "rx", "utc": "2026-11-06T02:11:49.478492+00:00", "host_us": 23778344.9, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1010}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:11:50.785294+00:00", "host_us": 25084731.5, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1011}}
+{"kind": "rx", "utc": "2026-11-06T02:11:50.991461+00:00", "host_us": 25291178.4, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1011}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:11:52.309656+00:00", "host_us": 26608943.7, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1012}}
+{"kind": "rx", "utc": "2026-11-06T02:11:52.516292+00:00", "host_us": 26815753.9, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1012}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:11:53.821788+00:00", "host_us": 28121185.4, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1013}}
+{"kind": "rx", "utc": "2026-11-06T02:11:54.028260+00:00", "host_us": 28327930.4, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1013}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:11:55.343993+00:00", "host_us": 29643208.2, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1014}}
+{"kind": "rx", "utc": "2026-11-06T02:11:55.549909+00:00", "host_us": 29849223.8, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1014}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:11:56.856924+00:00", "host_us": 31156175.6, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1015}}
+{"kind": "rx", "utc": "2026-11-06T02:11:57.063335+00:00", "host_us": 31362409.7, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1015}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:11:58.380000+00:00", "host_us": 32679126.3, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1016}}
+{"kind": "rx", "utc": "2026-11-06T02:11:58.593007+00:00", "host_us": 32891966.8, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1016}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:11:59.904871+00:00", "host_us": 34204003.5, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1017}}
+{"kind": "rx", "utc": "2026-11-06T02:12:00.110543+00:00", "host_us": 34410167.2, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1017}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:12:01.429850+00:00", "host_us": 35728939.2, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1018}}
+{"kind": "rx", "utc": "2026-11-06T02:12:01.635853+00:00", "host_us": 35935146.5, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1018}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:12:02.944394+00:00", "host_us": 37243491.7, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1019}}
+{"kind": "rx", "utc": "2026-11-06T02:12:03.150503+00:00", "host_us": 37449931.6, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1019}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:12:04.456502+00:00", "host_us": 38755575.6, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1020}}
+{"kind": "rx", "utc": "2026-11-06T02:12:04.662500+00:00", "host_us": 38961438.5, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1020}, "retain": false}
+{"kind": "tx", "utc": "2026-11-06T02:12:05.971113+00:00", "host_us": 40270106.4, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1021}}
+{"kind": "rx", "utc": "2026-11-06T02:12:06.177797+00:00", "host_us": 40476513.2, "topic": "mack/ods3/7c92a1/cadeira01/ensaio-9fd31b/sync_req", "payload": {"id": 1021}, "retain": false}

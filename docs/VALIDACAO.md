@@ -1,4 +1,4 @@
-# Estado da verificação — 03/11/2026
+# Estado da verificação — atualização de 05/11/2026
 
 ## Verificações aprovadas
 
@@ -18,10 +18,23 @@
 - [Resultados, problemas corrigidos e limites](RESULTADOS_WOKWI.md).
 - [Dados efetivamente coletados](../dados/coletas/2026-11-03-wokwi-mqtt/).
 
-O commit da fonte final simulada é `9ba0d0cf415ce25dfacdc744615f53dcc574a4df`. Seus hashes e a diferença entre o checkout do receptor e a fonte corrigida estão registrados no relato. Os dados brutos preservam as tentativas de diagnóstico e a sessão corrigida.
+O commit da fonte simulada da coleta inicial é `9ba0d0cf415ce25dfacdc744615f53dcc574a4df`. Seus hashes e a diferença entre o checkout do receptor e a fonte corrigida estão registrados no relato. Os dados brutos preservam as tentativas de diagnóstico e a sessão corrigida.
 
 ## Limites
 
 A coleta é um ensaio exploratório com um ciclo completo e novo início, sem cinco repetições de todos os casos. As falhas de rede e sensor não foram injetadas de maneira controlada na sessão corrigida. A forma de onda e a duração dos pulsos do buzzer não foram medidas. A renderização visual do painel no runner não foi inspecionada; foram verificados seu endpoint, a inicialização do fluxo e o registro das mensagens.
 
-Não foram executados montagem mecânica física, ensaios com pessoas ou avaliação clínica. O vídeo no YouTube e a incorporação dos resultados e links ao artigo continuam pendentes.
+Não foram executados montagem mecânica física, ensaios com pessoas ou avaliação clínica. O artigo Word foi atualizado com os resultados, imagens, gráficos e links das duas campanhas. O vídeo no YouTube será gravado pelos autores antes da submissão.
+
+## Verificações adicionais — 05/11/2026
+
+- Versão instrumentada compilada e executada no Wokwi; ZIP e hashes publicados com a coleta.
+- Quatro detecções de ocupação e quatro confirmações GPIO recebidas por MQTT.
+- Cinco testes do painel e dois testes de exportação novamente aprovados.
+- Quatro novos testes da análise temporal aprovados: correlação com deslocamento conhecido, necessidade de sondas, quatro observações e confirmação GPIO.
+- Validador JSON/fluxo/sincronização novamente aprovado.
+- As novas verificações não substituem os ensaios físicos nem o vídeo exigido.
+
+## Validação remota da fonte instrumentada
+
+A execução [42153044335](https://github.com/caiokraetzer/monitor-tempo-sentado/actions/runs/42153044335), no commit 8fb093b227f627ea98227643e1dff60be3af95c3, concluiu com sucesso: cinco testes do painel, seis testes Python (dois de exportação e quatro da análise temporal), validador estrutural, 40 cenários C++ e compilação ESP32 nos perfis de 60 s e 1.800 s. Os binários e ELF foram preservados como artefatos do workflow.

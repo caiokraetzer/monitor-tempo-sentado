@@ -24,3 +24,7 @@ Para falhas no Wokwi, quando a interface não permitir desconectar durante a exe
 Crie um relato com: caso; número da repetição; origem Wokwi/hardware; commit; perfil; instante planejado e observado; eventos e duração; erro de tempo; disparos indevidos; falhas de rede; resultado aprovado/reprovado; caminho de JSONL/CSV/capturas. Registre também os casos que não puderam ser executados.
 
 Não trate testes nativos de C++ como ensaios no simulador. Eles verificam a lógica compartilhada com entradas controladas, sem sensor, placa, áudio, Wi-Fi ou broker. A compilação verifica compatibilidade de fonte, não o comportamento elétrico.
+
+## Campanha específica de quatro medições
+
+O item 7 da entrega utiliza quatro medições para cada sensor e atuador, distintas das cinco repetições previstas para os demais casos funcionais. Essa campanha foi executada em 05/11/2026: quatro entradas em 20 kg e quatro comandos remotos ao buzzer, com correlação de IDs, relógios e confirmações GPIO. Procedimento e resultados em [TEMPOS_RESPOSTA.md](TEMPOS_RESPOSTA.md).
